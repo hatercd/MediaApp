@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:diagonal="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.Fragment_Profile">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        diagonal:layout_constraintEnd_toEndOf="parent"
+        diagonal:layout_constraintStart_toStartOf="parent"
+        diagonal:layout_constraintTop_toTopOf="parent">
+
+        <com.github.florent37.diagonallayout.DiagonalLayout
+            android:id="@+id/diagonalLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_230mdp"
+            android:elevation="30dp"
+            diagonal:diagonal_angle="17"
+            diagonal:diagonal_direction="left"
+            diagonal:diagonal_position="bottom">
+
+            <ImageView
+                android:id="@+id/coverPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ava" />
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/black_shape" />
+
+        </com.github.florent37.diagonallayout.DiagonalLayout>
+    </LinearLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="@dimen/_70mdp"
+        android:layout_height="@dimen/_70mdp"
+        android:layout_marginLeft="30dp"
+        android:padding="4dp"
+        android:src="@drawable/ava"
+        diagonal:civ_border_color="@color/white"
+        diagonal:civ_border_width="5dp"
+        diagonal:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        diagonal:layout_constraintStart_toStartOf="@+id/linearLayout"
+        diagonal:layout_constraintTop_toTopOf="@+id/linearLayout"
+        diagonal:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/changeCoverPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/icon_image"
+        diagonal:layout_constraintBottom_toTopOf="@+id/profile_image"
+        diagonal:layout_constraintStart_toStartOf="parent"
+        diagonal:layout_constraintTop_toTopOf="@+id/linearLayout"
+        diagonal:layout_constraintVertical_bias="0.26" />
+
+    <ImageView
+        android:id="@+id/verifiedAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_check"
+        diagonal:layout_constraintBottom_toBottomOf="@+id/profile_image"
+        diagonal:layout_constraintEnd_toEndOf="@+id/profile_image"
+        diagonal:layout_constraintHorizontal_bias="0.95"
+        diagonal:layout_constraintStart_toStartOf="@+id/profile_image"
+        diagonal:layout_constraintTop_toTopOf="@+id/profile_image"
+        diagonal:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/acme"
+        android:text="Trần Văn"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14font_mdp"
+        diagonal:layout_constraintEnd_toEndOf="@+id/profile_image"
+        diagonal:layout_constraintStart_toStartOf="@+id/profile_image"
+        diagonal:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+    <TextView
+        android:id="@+id/job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coder"
+        android:textSize="10sp"
+        diagonal:layout_constraintEnd_toEndOf="@+id/userName"
+        diagonal:layout_constraintStart_toStartOf="@+id/userName"
+        diagonal:layout_constraintTop_toBottomOf="@+id/userName" />
+
+    <ImageView
+        android:id="@+id/addFriendView"
+        android:layout_width="@dimen/_30mdp"
+        android:layout_height="@dimen/_30mdp"
+        android:layout_marginStart="160dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/icon_person"
+        android:backgroundTint="#444444"
+        diagonal:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        diagonal:layout_constraintEnd_toEndOf="parent"
+        diagonal:layout_constraintEnd_toStartOf="@+id/commentView"
+        diagonal:layout_constraintHorizontal_bias="0.5"
+        diagonal:layout_constraintHorizontal_chainStyle="packed"
+        diagonal:layout_constraintStart_toEndOf="@+id/linearLayout" />
+
+    <ImageView
+        android:id="@+id/commentView"
+        android:layout_width="@dimen/_30mdp"
+        android:layout_height="@dimen/_30mdp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/icon_cmt"
+        android:backgroundTint="#776E6E"
+        diagonal:layout_constraintEnd_toEndOf="parent"
+        diagonal:layout_constraintEnd_toStartOf="@+id/callView"
+        diagonal:layout_constraintHorizontal_bias="0.5"
+        diagonal:layout_constraintStart_toEndOf="@+id/addFriendView"
+        diagonal:layout_constraintTop_toTopOf="@+id/addFriendView" />
+
+    <ImageView
+        android:id="@+id/callView"
+        android:layout_width="@dimen/_30mdp"
+        android:layout_height="@dimen/_30mdp"
+        android:background="@drawable/icon_call"
+        android:backgroundTint="#444444"
+        diagonal:layout_constraintEnd_toEndOf="parent"
+        diagonal:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        diagonal:layout_constraintHorizontal_bias="0.5"
+        diagonal:layout_constraintStart_toEndOf="@+id/commentView"
+        diagonal:layout_constraintTop_toTopOf="@+id/commentView" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="16dp"
+        diagonal:cardElevation="5dp"
+        diagonal:cardMaxElevation="5dp"
+        diagonal:layout_constraintEnd_toEndOf="parent"
+        diagonal:layout_constraintStart_toEndOf="@+id/profile_image"
+        diagonal:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/followRv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Theo dõi"
+                android:textSize="@dimen/_12font_mdp"
+                diagonal:layout_constraintEnd_toStartOf="@+id/view8"
+                diagonal:layout_constraintStart_toStartOf="parent"
+                diagonal:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/follower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1229"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                diagonal:layout_constraintEnd_toEndOf="@+id/followRv"
+                diagonal:layout_constraintStart_toStartOf="@+id/followRv"
+                diagonal:layout_constraintTop_toBottomOf="@+id/followRv" />
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@drawable/black_shape"
+                diagonal:layout_constraintBottom_toBottomOf="parent"
+                diagonal:layout_constraintEnd_toStartOf="@+id/textView6"
+                diagonal:layout_constraintStart_toEndOf="@+id/followRv"
+                diagonal:layout_constraintTop_toTopOf="@+id/followRv" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bạn bè"
+                android:textSize="@dimen/_12font_mdp"
+                diagonal:layout_constraintEnd_toStartOf="@+id/view9"
+                diagonal:layout_constraintStart_toEndOf="@+id/view8"
+                diagonal:layout_constraintTop_toTopOf="@+id/view8" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="123"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                diagonal:layout_constraintEnd_toEndOf="@+id/textView6"
+                diagonal:layout_constraintStart_toStartOf="@+id/textView6"
+                diagonal:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <View
+                android:id="@+id/view9"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@drawable/black_shape"
+                diagonal:layout_constraintBottom_toBottomOf="parent"
+                diagonal:layout_constraintEnd_toStartOf="@+id/textView7"
+                diagonal:layout_constraintStart_toEndOf="@+id/textView6"
+                diagonal:layout_constraintTop_toTopOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bài đăng"
+                android:textSize="@dimen/_12font_mdp"
+                diagonal:layout_constraintEnd_toEndOf="parent"
+                diagonal:layout_constraintStart_toEndOf="@+id/view9"
+                diagonal:layout_constraintTop_toTopOf="@+id/view9" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                diagonal:layout_constraintEnd_toEndOf="@+id/textView7"
+                diagonal:layout_constraintStart_toStartOf="@+id/textView7"
+                diagonal:layout_constraintTop_toBottomOf="@+id/textView7" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:text="Trong phần giới thiệu bản thân, bạn nên nhấn mạnh những thông tin có lồng ghép điểm mạnh."
+        android:textSize="@dimen/_12font_mdp"
+        diagonal:layout_constraintEnd_toEndOf="@+id/cardView"
+        diagonal:layout_constraintHorizontal_bias="0.0"
+        diagonal:layout_constraintStart_toStartOf="parent"
+        diagonal:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Gợi ý"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12font_mdp"
+        android:textStyle="bold"
+        diagonal:layout_constraintStart_toStartOf="@+id/textView11"
+        diagonal:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/friendRv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        diagonal:layout_constraintEnd_toEndOf="parent"
+        diagonal:layout_constraintHorizontal_bias="0.5"
+        diagonal:layout_constraintStart_toStartOf="parent"
+        diagonal:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
